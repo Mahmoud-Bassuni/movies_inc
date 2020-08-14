@@ -33,7 +33,9 @@ extension MovieRouter: ServiceLayer {
             
         case let .createRate(movieId,_):
             let sessionId = UserDefaults.standard.value(forKey: "guestSessionID")!
-            let escapedString = String(format:EndPoint.movieRatingURL.rawValue,"\(movieId)","\(sessionId)").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            
+            
+            let escapedString = String(format:EndPoint.movieRatingURL.rawValue,"\(movieId)","\(sessionId)").removingPercentEncoding
 
             return escapedString!
         case let .getMovieCasting(movieId):
