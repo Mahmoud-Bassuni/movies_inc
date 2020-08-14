@@ -15,6 +15,7 @@ class MovieListViewModel {
     private(set) var movies = BehaviorRelay<[MoviesModelResult?]>(value: [])
     let onShowError = PublishSubject<String>()
     let movieRepository : MovieRepository?
+    weak var coordinator: MovieCoordinator?
     
     init(_movieRepository : MovieRepository) {
         self.movieRepository = _movieRepository
@@ -28,7 +29,6 @@ class MovieListViewModel {
                 switch result {
                 case .success(let resp):
                     if let response =  resp.results  {
-                       
                         self?.movies.accept(response.sorted { $0.title.lowercased() < $1.title.lowercased() })
                     }
                 case .failure(let error):
@@ -44,28 +44,3 @@ class MovieListViewModel {
     }
 }
 
-struct MovieViewModel {
-    private let movie: MoviesModelResult
-    init(_ _movie: MoviesModelResult) {
-        self.movie = _movie
-    }
-}
-
-extension MovieViewModel {
-    var id: Int {
-        return movie.id ?? 0
-    }
-    var title: String {
-        return  movie.title ?? ""
-    }
-    var voteAverage: Double {
-        return movie.voteAverage ?? 0.0
-    }
-    var releaseDate: String {
-        return movie.releaseDate ?? ""
-    }
-    var posterPath: URL? {
-        return URL(string: "\(EndPoint.imageDomain.rawValue)\(movie.posterPath ?? "" )")
-    }
-    
-}

@@ -20,6 +20,12 @@ class MovieRepository {
        
            }
     
+    func getMovieCasting(movieId : Int , completion:@escaping (RequestResult<MovieCastingModelCodable>) -> Void) {
+
+        ApiResponseHandler.shared.performRequest(route: MovieRouter.getMovieCasting(movieId: movieId), completion: completion)
+          
+              }
+    
     func createNewSession(completion:@escaping (RequestResult<SessionModelCodable>) -> Void) {
 
         ApiResponseHandler.shared.performRequest(route: MovieRouter.createNewSession, completion: completion)

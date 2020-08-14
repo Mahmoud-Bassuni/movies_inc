@@ -11,11 +11,11 @@ import Foundation
 
 // MARK: - MovieDeatilsModelCodable
 struct MovieDeatilsModelCodable: Codable {
-    let id: Int
+    let id: Int!
     let title, releaseDate, overview : String!
-    let genres: [Genre]
+    let genres: [Genre]!
     let posterPath: String!
-    let voteAverage: Double
+    let voteAverage: Double!
     
     enum CodingKeys: String, CodingKey {
         case id, genres, overview , title

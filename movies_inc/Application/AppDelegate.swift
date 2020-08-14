@@ -10,10 +10,22 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+   var appCoordinator: AppCoordinator?
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+      
+        let navController = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator = AppCoordinator(window: window, navigationController: navController)
+        appCoordinator?.start()
+
         return true
     }
+
+   
+
+
 }
 

@@ -10,29 +10,27 @@ import UIKit
 import Kingfisher
 import Cosmos
 class MovieTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var movieTitleLable: UILabel!
     @IBOutlet weak var releaseDateLable: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
     @IBOutlet weak var movieRateView: CosmosView!
+    
     func bindCell(viewModel : MovieViewModel) {
+        
         movieTitleLable.text = viewModel.title
         releaseDateLable.text = viewModel.releaseDate
         movieTitleLable.text = viewModel.title
         movieRateView.rating = viewModel.voteAverage
-        if let  url = viewModel.posterPath {
-            moviePosterImageView.kf.setImage(with:url)
+        if let url = viewModel.posterPath {
+            moviePosterImageView.kf.indicatorType = .activity
+            moviePosterImageView.kf.setImage(
+                with: url,
+                options: [
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+            ])
         }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
