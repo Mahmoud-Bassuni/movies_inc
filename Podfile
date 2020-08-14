@@ -7,7 +7,10 @@ target 'movies_inc' do
 
   # Pods for movies_inc
    pod 'Alamofire', '~> 5.1'
-
+   pod 'RxSwift', '~> 5.1.1'
+   pod 'RxCocoa', '~> 5.1.1'
+   pod 'Kingfisher'
+   pod 'Cosmos', '~> 18.0'
   target 'movies_incTests' do
     inherit! :search_paths
     # Pods for testing
