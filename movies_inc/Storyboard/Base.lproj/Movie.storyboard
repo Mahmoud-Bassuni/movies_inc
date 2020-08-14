@@ -191,12 +191,18 @@
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="exitBtnTapped" destination="9x2-gw-y9c" eventType="touchUpInside" id="p8h-yc-YXw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hp8-GR-L1s">
                                                 <rect key="frame" x="162" y="0.0" width="112" height="44"/>
                                                 <color key="backgroundColor" red="0.95575553179999995" green="0.75366628170000005" blue="0.30572611090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                 <state key="normal" title="Ok"/>
+                                                <connections>
+                                                    <action selector="rankBtnAction:" destination="9x2-gw-y9c" eventType="touchUpInside" id="Dcq-Vx-60j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -255,6 +261,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gz6-QA-b9G"/>
                     </view>
+                    <connections>
+                        <outlet property="rankProp" destination="ktm-Gm-s4c" id="CuE-ak-in6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irx-WO-eeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

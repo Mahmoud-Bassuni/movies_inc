@@ -14,6 +14,8 @@
 		1E13DE8224E719830050C153 /* MovieActorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E13DE8124E719830050C153 /* MovieActorViewModel.swift */; };
 		1E13DE8424E725430050C153 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E13DE8324E725430050C153 /* MovieViewModel.swift */; };
 		1E13DE8624E72A8D0050C153 /* MovieRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E13DE8524E72A8D0050C153 /* MovieRankViewController.swift */; };
+		1E13DE8824E72E4F0050C153 /* MovieRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E13DE8724E72E4F0050C153 /* MovieRankViewModel.swift */; };
+		1E13DE8A24E72FED0050C153 /* SubmitMovieRankModelCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E13DE8924E72FED0050C153 /* SubmitMovieRankModelCodable.swift */; };
 		1E5E8B3524E690C7007841CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E8B3424E690C7007841CA /* AppDelegate.swift */; };
 		1E5E8B3924E690C7007841CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E8B3824E690C7007841CA /* ViewController.swift */; };
 		1E5E8B3C24E690C7007841CA /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5E8B3A24E690C7007841CA /* Movie.storyboard */; };
@@ -66,6 +68,8 @@
 		1E13DE8124E719830050C153 /* MovieActorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieActorViewModel.swift; sourceTree = "<group>"; };
 		1E13DE8324E725430050C153 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		1E13DE8524E72A8D0050C153 /* MovieRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRankViewController.swift; sourceTree = "<group>"; };
+		1E13DE8724E72E4F0050C153 /* MovieRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRankViewModel.swift; sourceTree = "<group>"; };
+		1E13DE8924E72FED0050C153 /* SubmitMovieRankModelCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitMovieRankModelCodable.swift; sourceTree = "<group>"; };
 		1E5E8B3124E690C7007841CA /* movies_inc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movies_inc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5E8B3424E690C7007841CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E5E8B3824E690C7007841CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				1E5E8B8824E6C8A1007841CA /* MovieDeatilsModelCodable.swift */,
 				1E5E8B8A24E6CB7E007841CA /* SessionModelCodable.swift */,
 				1E13DE7A24E7166A0050C153 /* MovieCastingModelCodable.swift */,
+				1E13DE8924E72FED0050C153 /* SubmitMovieRankModelCodable.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			children = (
 				1E5E8BA324E6FDFE007841CA /* MovieDetailsViewModel.swift */,
 				1E13DE8124E719830050C153 /* MovieActorViewModel.swift */,
+				1E13DE8724E72E4F0050C153 /* MovieRankViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				1E5E8B6524E6A348007841CA /* AppCoordinator.swift in Sources */,
 				1E5E8B7124E6A574007841CA /* EndPoint.swift in Sources */,
 				1E5E8B8724E6C6F7007841CA /* MoviesModelCodable.swift in Sources */,
+				1E13DE8A24E72FED0050C153 /* SubmitMovieRankModelCodable.swift in Sources */,
 				1E5E8B6024E6A2D9007841CA /* UIViewController+Extension.swift in Sources */,
 				1E13DE7F24E717E80050C153 /* ActorTableViewCell.swift in Sources */,
 				1E13DE8224E719830050C153 /* MovieActorViewModel.swift in Sources */,
@@ -630,6 +637,7 @@
 				1E5E8B9024E6CE00007841CA /* MovieRepository.swift in Sources */,
 				1E5E8B8224E6AD17007841CA /* ApiResponseHandler.swift in Sources */,
 				1E5E8B6324E6A319007841CA /* Coordinator.swift in Sources */,
+				1E13DE8824E72E4F0050C153 /* MovieRankViewModel.swift in Sources */,
 				1E5E8B8B24E6CB7E007841CA /* SessionModelCodable.swift in Sources */,
 				1E5E8B7C24E6AB51007841CA /* MpInterceptor.swift in Sources */,
 				1E5E8B7E24E6ABF8007841CA /* Logger.swift in Sources */,

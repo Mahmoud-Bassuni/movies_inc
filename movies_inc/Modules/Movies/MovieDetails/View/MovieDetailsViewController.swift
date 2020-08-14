@@ -33,6 +33,9 @@ class MovieDetailsViewController: UIViewController  {
     
     @IBAction func btnRanckAction(_ sender: Any) {
         let vc : MovieRankViewController = .instantiate(storyboard: "Movie")
+        let movieRankViewModel = MovieRankViewModel(MovieRepository())
+        movieRankViewModel.movieId = viewModel?.movieId ?? 0
+        vc.viewModel = movieRankViewModel
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

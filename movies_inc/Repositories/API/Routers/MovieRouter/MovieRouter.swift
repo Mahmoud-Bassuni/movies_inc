@@ -14,7 +14,7 @@ enum MovieRouter {
     case getMovieDetails(id : Int)
     case getMovieCasting(movieId : Int)
     case createNewSession
-    case createRate(value : Double)
+    case createRate(movieId : Int ,rankValue : Double)
 }
 
 extension MovieRouter: ServiceLayer {
@@ -31,8 +31,11 @@ extension MovieRouter: ServiceLayer {
         case .createNewSession:
             return EndPoint.createNewSessionURL.rawValue
             
-        case .createRate:
-            return EndPoint.movieRatingURL.rawValue
+        case let .createRate(movieId,_):
+            let sessionId = UserDefaults.standard.value(forKey: "guestSessionID")!
+            let escapedString = String(format:EndPoint.movieRatingURL.rawValue,"\(movieId)","\(sessionId)").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+
+            return escapedString!
         case let .getMovieCasting(movieId):
             return String(format:EndPoint.movieCastURL.rawValue,"\(movieId)")
         }
@@ -45,7 +48,7 @@ extension MovieRouter: ServiceLayer {
         case  .createNewSession: return nil
         case  .getMovieDetails: return ["language": "en-US"]
         case  .getMovieCasting: return ["language": "en-US"]
-        case let .createRate(value): return ["language": "en-US","value":value]
+        case let .createRate(rankValue , _ ): return ["value":rankValue]
         }
     }
     

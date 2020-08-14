@@ -13,7 +13,7 @@ enum EndPoint: String{
        case movieNowPlayingURL = "3/movie/now_playing"
        case movieDetailsURL = "/3/movie/%1$@"
        case createNewSessionURL = "3/authentication/guest_session/new"
-       case movieRatingURL = "3/movie/521034/rating"
+       case movieRatingURL = "3/movie/%1$@/rating/guest_session_id=%2$@"
        case movieCastURL = "3/movie/%1$@/credits"
        case imageDomain = "https://image.tmdb.org/t/p/w500"
 
