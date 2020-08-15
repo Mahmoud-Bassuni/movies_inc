@@ -54,8 +54,8 @@ extension ApiResponseHandler {
                 completion(.success(data))
                 
             case .failure( let error):
-                print(error)
-                completion(.failure(ApiError(status: 0, message: "Something went wrong try again later")))
+               
+                completion(.failure(ApiError(status: 0, message: error.errorDescription ?? "Something went wrong try again later")))
             }
         }
     }
