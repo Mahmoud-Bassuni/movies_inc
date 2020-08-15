@@ -32,12 +32,8 @@ extension MovieRouter: ServiceLayer {
             return EndPoint.createNewSessionURL.rawValue
             
         case let .createRate(movieId,_):
-            let sessionId = UserDefaults.standard.value(forKey: "guestSessionID")!
+            return String(format:EndPoint.movieRatingURL.rawValue,"\(movieId)")
             
-            
-            let escapedString = String(format:EndPoint.movieRatingURL.rawValue,"\(movieId)","\(sessionId)").removingPercentEncoding
-
-            return escapedString!
         case let .getMovieCasting(movieId):
             return String(format:EndPoint.movieCastURL.rawValue,"\(movieId)")
         }
@@ -50,7 +46,16 @@ extension MovieRouter: ServiceLayer {
         case  .createNewSession: return nil
         case  .getMovieDetails: return ["language": "en-US"]
         case  .getMovieCasting: return ["language": "en-US"]
-        case let .createRate(rankValue , _ ): return ["value":rankValue]
+        case let .createRate(_ , rankValue): return ["value":rankValue]
+        }
+    }
+    
+    var query: [String : String]? {
+        switch self {
+        case .getMovieList, .createNewSession, .getMovieDetails, .getMovieCasting : return nil
+        case  .createRate:
+            let sessionId = UserDefaults.standard.value(forKey: "guestSessionID")!
+            return ["guest_session_id":"\(sessionId)"]
         }
     }
     
