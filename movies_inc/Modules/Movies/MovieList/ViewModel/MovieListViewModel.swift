@@ -14,6 +14,7 @@ class MovieListViewModel {
     
     private(set) var movies = BehaviorRelay<[MoviesModelResult?]>(value: [])
     let onShowError = PublishSubject<String>()
+    
     let movieRepository : MovieRepository?
     weak var coordinator: MovieCoordinator?
     

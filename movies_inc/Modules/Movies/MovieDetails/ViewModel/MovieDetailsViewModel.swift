@@ -15,9 +15,11 @@ class MovieDetailsViewModel {
     private(set) var movie = BehaviorRelay<MovieDetailsModel?>(value: nil)
     private(set) var movieActor = BehaviorRelay<[Cast?]>(value: [])
     let onShowError = PublishSubject<String>()
+    
     let movieRepository : MovieRepository?
     var movieId = 0
-     weak var coordinator: MovieCoordinator?
+    weak var coordinator: MovieCoordinator?
+    
     init(_movieRepository : MovieRepository) {
         self.movieRepository = _movieRepository
     }

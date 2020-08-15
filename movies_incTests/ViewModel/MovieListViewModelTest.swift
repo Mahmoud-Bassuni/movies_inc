@@ -25,6 +25,6 @@ class MovieListViewModelTest: XCTestCase {
     {
         moviesVM = MovieListViewModel(_movieRepository: movieRepository)
         moviesVM.getMovies()
-        // here i should XCTAssertNotNil but it must be include rxswift actually i dont have time
+        // here i should make XCTAssertNotNil but it must be include rxswift actually i dont have time
     }
 }

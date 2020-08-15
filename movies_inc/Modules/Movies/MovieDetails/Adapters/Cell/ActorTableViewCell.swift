@@ -15,10 +15,7 @@ class ActorTableViewCell: UITableViewCell {
     @IBOutlet weak var actorNameLable: UILabel!
     @IBOutlet weak var actorImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+   
     
     func bindCell(viewModel : MovieActorViewModel) {
         charactorNameLable.text = viewModel.characterName
@@ -33,11 +30,6 @@ class ActorTableViewCell: UITableViewCell {
                     .cacheOriginalImage
             ])
         }
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }

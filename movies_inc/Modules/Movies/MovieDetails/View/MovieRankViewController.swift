@@ -12,10 +12,18 @@ import Cosmos
 import RxSwift
 class MovieRankViewController: UIViewController  {
     
+    @IBOutlet weak var rankProp: CosmosView!
     
-     let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
+    var viewModel : MovieRankViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModelConfig()
+    }
+
+    func viewModelConfig() {
+        if let viewModel = viewModel {
         viewModel.onShowError
                        .map { [weak self] in self?.alert(title: "error", message: $0)}
                        .subscribe()
@@ -24,19 +32,13 @@ class MovieRankViewController: UIViewController  {
         viewModel.onSuccess.subscribe( { value in
              self.dismiss(animated: true)
         }).disposed(by: disposeBag)
-        
-      
-        
+        }
     }
     
-    var viewModel : MovieRankViewModel!
-    
-    @IBOutlet weak var rankProp: CosmosView!
     
     @IBAction func rankBtnAction(_ sender: Any) {
         viewModel.rankValue = rankProp.rating
         viewModel.SubmitMovieRank()
-       
     }
     
     @IBAction func exitBtnTapped(){

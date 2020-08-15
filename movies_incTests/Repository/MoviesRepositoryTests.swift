@@ -30,7 +30,7 @@ class MoviesServiceTests: XCTestCase {
                 case .success(let resp):
                     if let response =  resp.results  {
                         XCTAssertNotNil(response)
-                        
+                
                     }
                 case .failure(let error):
                     print(error.message)
